@@ -7,39 +7,40 @@ Can a machine learning model successfully identify and classify online extremist
 
 I will build a machine learning model that will be able to:
 
-   -Classify extremist from non-extremist text content over large datasets (more that 35_000 observations)
-   -Have an accuracy score of at least 10% over the baseline (the majority class)
-   -Be able to discern non-extremist content from a relatively similar content class in the dataset (e.g. observations labeled from a non-extremist politics site that contains some intense languages and debate, as opposed to posts from a recipe website)
+- Classify extremist from non-extremist text content over large datasets (more that 35_000 observations)
+- Have an accuracy score of at least 10% over the baseline (the majority class)
+- Be able to discern non-extremist content from a relatively similar content class in the dataset (e.g. observations labeled from a non-extremist politics site that contains some intense languages and debate, as opposed to posts from a recipe website)
 
 
 ## 2. Definitions:
 
-Extremism is defined by the Anti-Defamation League as “a concept used to describe religious, social or political belief systems that exist substantially outside of belief systems more broadly accepted in society. Extreme ideologies often seek radical change in the nature of government, religion or society.”
+**Extremism** is defined by the Anti-Defamation League as “a concept used to describe religious, social or political belief systems that exist substantially outside of belief systems more broadly accepted in society. Extreme ideologies often seek radical change in the nature of government, religion or society.”
 
 Not every extremist movement is inimical per se—- the Anti-Defamation League cites the abolitionist movement of the 19th century (extremist in its time) as an example of a "good" extremist movement, however, according to the ADL "most extremist movements exist outside of the mainstream because many of their views or tactics are objectionable".
 
-Extreme speech is any language that contains and/or promotes extremism-- citing, encouraging, justifying or otherwise spreading ideas that are acutely outside the generally-accepted beliefs of the greater society to which the language users belong.
+**Extreme speech** is any language that contains and/or promotes extremism-- citing, encouraging, justifying or otherwise spreading ideas that are acutely outside the generally-accepted beliefs of the greater society to which the language users belong.
 
-Radicalization is defined by the Center for Research on Extremism (C-REX) as “the gradual social process into extremism… often applied to explain changes in ideas or behavior.”
+**Radicalization** is defined by the Center for Research on Extremism (C-REX) as “the gradual social process into extremism… often applied to explain changes in ideas or behavior.”
 
-Radicalizing language is any language that can radicalize those who are exposed to it, usually but not necessarily over time.
+**Radicalizing language** is any language that can radicalize those who are exposed to it, usually but not necessarily over time.
 
 
 ## 3. Data:
 
-Dataset source: Peeter, Stijn; Hagan, Sal; Das, Partha: “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, February 2020, presented at the 12th ACM Web Science Conference 2020 https://zenodo.org/record/3676483#.YbAkv_HMLfF
+Dataset source: Peeter, Stijn; Hagan, Sal; Das, Partha: “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, February 2020, presented at the 12th ACM Web Science Conference 2020
+https://zenodo.org/record/3676483#.YbAkv_HMLfF
 
 I was able to obtain scraped subreddit post data from a research project at the University of Amsterdam, cited above, which was fortuitous because two of the subreddits in this corpus have since been banned (i.e. closed down) by Reddit. The_Donald and ChapoTrapHouse are both no longer active on Reddit, both banned in June 2020, roughly seven months after the subreddit content for the above project had been scraped by the researchers (between October 1st and November 1st of 2019). The two subreddits were closed due to their promoting violence and breaking Reddit content guidelines. The University of Amsterdam research project had used the subreddit post corpus as a test set for their "lexicon of 'extreme speech' (initially extracted from a corpus of 3_335_265 posts from 4chan's /pol/ sub-forum)...used to detect hate speech and extreme speech on online platforms".  
 
 This corpus, which I repurposed for my classification project, was acquired in the form of a csv of 3_618_557 rows, each row containing the content of a different post as well as which subreddit the post came from. Each post originates from one of four subreddits:
 
-   -r/politics: Reddit's general politics subreddit, a forum for news and discussion about US politics, which, significantly, contains a great deal of topical content and surface language (i.e. passionate and intense political and cultural debates and other exchanges) similar to the subreddits in the corpus deemed 'extremist'-- ideal as the non-extremist control category. Currently active. 7.8 million members. Comprises 2_379_546 of the posts in this dataset, 66% of the corpus. Used as the non-extremist category for the classification model.
+- **r/politics:** Reddit's general politics subreddit, a forum for news and discussion about US politics, which, significantly, contains a great deal of topical content and surface language (i.e. passionate and intense political and cultural debates and other exchanges) similar to the subreddits in the corpus deemed 'extremist'-- ideal as the non-extremist control category. Currently active. 7.8 million members. Comprises 2_379_546 of the posts in this dataset, 66% of the corpus. Used as the non-extremist category for the classification model.
    
-   -r/The_Donald: A forum where participants posted comments in support of Donald Trump. Initially created in 2015 after he announced his presidential campaign. Currently inactive, banned by Reddit in June 2020 for violating Reddit harassment policies. 790_000 members at its height. Comprises 878_217 of the posts in this dataset, 24% of the corpus. Used as an extremist category for the classification model.
+- **r/The_Donald:** A forum where participants posted comments in support of Donald Trump. Initially created in 2015 after he announced his presidential campaign. Currently inactive, banned by Reddit in June 2020 for violating Reddit harassment policies. 790_000 members at its height. Comprises 878_217 of the posts in this dataset, 24% of the corpus. Used as an extremist category for the classification model.
    
-   -TheRedPill: A forum promoting traditional gender roles, antifeminism, rape culture and "hegemonic masculinity" (https://en.wikipedia.org/wiki/Controversial_Reddit_communities). In quarantine since 2018. 149_432 members. Comprises 348_552 of the posts in this dataset, 9% of the corpus. Used as an extremist category for the classification model.
+- **TheRedPill:** A forum promoting traditional gender roles, antifeminism, rape culture and "hegemonic masculinity" (https://en.wikipedia.org/wiki/Controversial_Reddit_communities). In quarantine since 2018. 149_432 members. Comprises 348_552 of the posts in this dataset, 9% of the corpus. Used as an extremist category for the classification model.
    
-   -ChapoTrapHouse: A forum of socialist memes and posts, described as left-leaning, anti-cop, pro-conspiracy theory. Currently inactive, banned by Reddit in June 2020 (at the same time it banned The_Donald, citing a crackdown on ‘pro-hate’ communities). 160_000 members at its height. Comprises 12_242 of the posts in this dataset, .03% of the corpus.
+- **ChapoTrapHouse:** A forum of socialist memes and posts, described as left-leaning, anti-cop, pro-conspiracy theory. Currently inactive, banned by Reddit in June 2020 (at the same time it banned The_Donald, citing a crackdown on ‘pro-hate’ communities). 160_000 members at its height. Comprises 12_242 of the posts in this dataset, .03% of the corpus.
 
 
 ## 4. Methodology I: Determining what is and is not extremist content
@@ -61,60 +62,60 @@ I used a balanced dataset from this corpus for the modeling: 40_000 posts total,
 
 NLP techniques were used to clean and preprocess the post data in preparation for being input to the various classification models. The final dataframe used as input for the modeling had 40_000 rows (each row a different scraped Reddit post) and eight columns:
 
-'body': the original raw post text originally scraped from the Reddit site
+- **'body':** the original raw post text originally scraped from the Reddit site
 
-'subreddit': the subreddit the post came from (politics, ChapoTrapHouse, TheRedPill, or The_Donald)
+- **'subreddit':** the subreddit the post came from (politics, ChapoTrapHouse, TheRedPill, or The_Donald)
 
-'word_count': the word count of the post
+- **'word_count':** the word count of the post
 
-'tokenized': the post text after being run through an NLP preprocessing function, tokenizing and lower-casing the text, and removing punctuation
+- **'tokenized':** the post text after being run through an NLP preprocessing function, tokenizing and lower-casing the text, and removing punctuation
 
-'clean_content': the post text after being run through an NLP stemming function, performing all of the processing in the tokenized column PLUS stemming each word in the post
+- **'clean_content':** the post text after being run through an NLP stemming function, performing all of the processing in the tokenized column PLUS stemming each word in the post
 
-'extreme': containing a binary marker noting whether the post for the row in question is deemed extremist (1) or non-extremist (0), based upon which subreddit the post came from (0 if from r/politics, 1 if from any of the other three subreddits)
+- **'extreme':** containing a binary marker noting whether the post for the row in question is deemed extremist (1) or non-extremist (0), based upon which subreddit the post came from (0 if from r/politics, 1 if from any of the other three subreddits)
 
-'adjectives': a list of all the adjectives in the associated post
+- **'adjectives':** a list of all the adjectives in the associated post
 
-'adj_string': all the adjectives in the associated post as strings separated by a space
+- **'adj_string':** all the adjectives in the associated post as strings separated by a space
 
 
 NLP preprocessing:
 
-   -Create a word count of each subreddit post
+- Create a word count of each subreddit post
    
-   -Tokenize, stem, remove punctuation and special characters (the original, raw posts retained as well as a column of the tokenized posts and a colunm of the  stemmed posts, in order to compare performance in the models)
+- Tokenize, stem, remove punctuation and special characters (the original, raw posts retained as well as a column of the tokenized posts and a colunm of the  stemmed posts, in order to compare performance in the models)
    
-   -Identify all the adjectives in each post using Spacy’s Large English Model, then aggregating that to a total count of adjectives for each subreddit
+- Identify all the adjectives in each post using Spacy’s Large English Model, then aggregating that to a total count of adjectives for each subreddit
 
 
 Features and transformations tested by the models:
 
-   -with/without Standard English stopword removal
+- with/without Standard English stopword removal
    
-   -Word Count Vectorization (with various parameters)
+- Word Count Vectorization (with various parameters)
    
-   -with/without TF-IDF transformation
+- with/without TF-IDF transformation
    
-   -With/without StandardScaling
+- With/without StandardScaling
    
-   -Raw text vs Tokenized text vs Stemmed text
+- Raw text vs Tokenized text vs Stemmed text
    
-   -with/without the word count of each post included as input for the observation
+- with/without the word count of each post included as input for the observation
 
 
 Models used:
 
-   -Logistic Regression 
+- Logistic Regression 
    
-   -Support Vector Machine 
+- Support Vector Machine 
    
-   -Naive Bayes
+- Naive Bayes
    
-   -Decision Tree Classifier 
+- Decision Tree Classifier 
    
-   -Random Forest Classifier 
+- Random Forest Classifier 
    
-   -Extra Trees Classifier
+- Extra Trees Classifier
 
 
 ## 6. Conclusions and Recommendations
@@ -157,12 +158,12 @@ I had a hard time initially finding data for this project–- the good news is t
 Rather than making the decision myself (and possibly being constrained by my biases), I left the determination of what was an extremist vs nonextremist subreddit up to the University of Amsterdam researchers, who had chosen which subreddits to collect in order to test for extremist language. The results of their classification model, using their extreme speech lexicon, confirmed their initial judgements on which were and were not 'extremist' subreddits, and Reddit itself later provided vindication by banning two of the subreddits in question just seven months after the study (the third extremist subreddit, TheRedPill, remains accessible but has been in quarantine since 2018).
 
 The data: 
-    -The dataset I used was a randomly sampled subset of 40_000 observations from the larger (3.5 million) dataset of subreddit posts scraped from Reddit
-    -The classes were equal, 50% extremist subreddits (from The_Donald, TheRedPill and ChapoTrapHouse, 20_000 total) and 50% non-extremist subreddits (from the r/politics subreddit, 20_000 total), so any successful model would have to have an accuracy of more than 50%
+- The dataset I used was a randomly sampled subset of 40_000 observations from the larger (3.5 million) dataset of subreddit posts scraped from Reddit
+- The classes were equal, 50% extremist subreddits (from The_Donald, TheRedPill and ChapoTrapHouse, 20_000 total) and 50% non-extremist subreddits (from the r/politics subreddit, 20_000 total), so any successful model would have to have an accuracy of more than 50%
 
 The best-performing model:
-    -The best performing model was a Logistic Regression model, run across the raw text after count vectorization (unigrams only, no maximum features, no stopword removal)
-    -This model had an accuracy score of 67%, with a recall score of 70%, a precision score of 66% and an F1 score of 68%
+- The best performing model was a Logistic Regression model, run across the raw text after count vectorization (unigrams only, no maximum features, no stopword removal)
+- This model had an accuracy score of 67%, with a recall score of 70%, a precision score of 66% and an F1 score of 68%
 
 Conclusion:
 It is possible to create a model to classify extremist from non-extremist text, even in the case where there are some topical overlaps between the observations labeled extremist vs non-extremist. This is good news, because the authors of extremist language are getting increasingly canny and sophisticated about creating new content, both from a logistical standpoint (e.g, creating new subreddits, social media profiles, etc, as old ones are discovered and shut down) as well as from a linguistic standpoint (e.g. creating slang, masked and coded language, obscure vernacular and other rapid lexical innovation to encode and disperse their beliefs).
@@ -170,62 +171,62 @@ It is possible to create a model to classify extremist from non-extremist text, 
 While 67% accuracy does not seem that impressive, considering how similar the non-extremist posts were to the extremist posts (with a great deal of lexical and semantic overlap) this is quite a good return.
 
 Subsequent steps to take in this project:
-    -Spacy Large English Model as part of a classification pipeline, run over only the adjectives, then the Named Entities, then the Subjects of each post
-    -A one-dimensional CNN model, and other neural network models
-    -HuggingFace text classification, and other transformer models
-    -More computing power (e.g. so that a model can successfully be run across count vectorized data with no max features without timing out)
-    -More input data, including a dataset comprised of language that is incontestably 'extremist'
+- Spacy Large English Model as part of a classification pipeline, run over only the adjectives, then the Named Entities, then the Subjects of each post
+- A one-dimensional CNN model, and other neural network models
+- HuggingFace text classification, and other transformer models
+- More computing power (e.g. so that a model can successfully be run across count vectorized data with no max features without timing out)
+- More input data, including a dataset comprised of language that is incontestably 'extremist'
 
 
 ## 8. References
 
-“Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, Peeter, Stijn; Hagan, Sal; Das, Partha, February 2020, presented at the 12th ACM Web Science Conference 2020
+1) “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, Peeter, Stijn; Hagan, Sal; Das, Partha, February 2020, presented at the 12th ACM Web Science Conference 2020
 https://zenodo.org/record/3676483#.YbAkv_HMLfF
 
 
-Controversial Reddit communities-- Wikipedia
+2) Controversial Reddit communities-- Wikipedia
 https://en.wikipedia.org/wiki/Controversial_Reddit_communities
 
 
-"Twitch, Reddit crack down on Trump-linked content as industry faces reckoning", Politico, 6/29/2020
+3) "Twitch, Reddit crack down on Trump-linked content as industry faces reckoning", Politico, 6/29/2020
 https://www.politico.com/news/2020/06/29/reddit-bans-pro-trump-forum-in-crackdown-on-hate-speech-344698
 
-"Reddit Banned A Ton Of Subreddits Including r/The_Donald And r/ChapoTrapHouse", BuzzFeed News, 6/29/2020
+4) "Reddit Banned A Ton Of Subreddits Including r/The_Donald And r/ChapoTrapHouse", BuzzFeed News, 6/29/2020
 https://www.buzzfeednews.com/article/juliareinstein/reddit-bans-subreddits-thedonald-chapotraphouse
 
 
-"Male Supremacy", Southern Poverty Law Center
+5) "Male Supremacy", Southern Poverty Law Center
 https://www.splcenter.org/fighting-hate/extremist-files/ideology/male-supremacy
 
 
-"What is r/TheRedPill, the infamous men’s rights subreddit?", DailyDot, 5/21/2021
+6) "What is r/TheRedPill, the infamous men’s rights subreddit?", DailyDot, 5/21/2021
 https://www.dailydot.com/debug/reddit-red-pill/
 
 
-"Spitting out the Red Pill: Former misogynists reveal how they were radicalised online", The New Statesman, 9/9/2021
+7) "Spitting out the Red Pill: Former misogynists reveal how they were radicalised online", The New Statesman, 9/9/2021
 https://www.newstatesman.com/science-tech/2017/02/reddit-the-red-pill-interview-how-misogyny-spreads-online
 
 
-"Reddit ‘Quarantines’ White Nationalist Subreddits", Daily Beast, 9/29/2018
+8) "Reddit ‘Quarantines’ White Nationalist Subreddits", Daily Beast, 9/29/2018
 https://www.thedailybeast.com/reddit-quarantines-white-nationalist-subreddits
 
 
-“The rise of domestic extremism in America”, Washington Post, 4/12/2021
+9) “The rise of domestic extremism in America”, Washington Post, 4/12/2021
 https://www.washingtonpost.com/investigations/interactive/2021/domestic-terrorism-data/
 
 
-“The rise of domestic terrorism is fueled mostly by far-right extresmists", The Philadelphia Inquirer, 4/12/2021
+10) “The rise of domestic terrorism is fueled mostly by far-right extresmists", The Philadelphia Inquirer, 4/12/2021
 https://www.inquirer.com/news/nation-world/domestic-terrorism-analysis-study-far-right-20210412.html
 
 
-“Were the Sikh Temple Killings Preventable?”, Mother Jones, 8/9/2012
+11) “Were the Sikh Temple Killings Preventable?”, Mother Jones, 8/9/2012
 https://www.motherjones.com/politics/2012/08/sikh-temple-killings-preventable-homeland-security/
 
 
-“Radicalization and Violent Extremism: Lessons Learned from Canada, the UK and the US”, National Institute of Justice Report, July 2015
+12) “Radicalization and Violent Extremism: Lessons Learned from Canada, the UK and the US”, National Institute of Justice Report, July 2015
 https://www.ojp.gov/pdffiles1/nij/249947.pdf
 
 
-“What is radicalization?”, Center for Research on Extremism
+13) “What is radicalization?”, Center for Research on Extremism
 https://www.sv.uio.no/c-rex/english/groups/compendium/what-is-radicalization.html
 
