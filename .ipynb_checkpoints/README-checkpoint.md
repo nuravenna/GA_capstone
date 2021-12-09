@@ -27,9 +27,7 @@ Not every extremist movement is inimical per se—- the Anti-Defamation League c
 
 ## 3. Data:
 
-Dataset source: Peeter, Stijn; Hagan, Sal; Das, Partha: “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, February 2020, presented at the 12th ACM Web Science Conference 2020
-
-[Link](https://zenodo.org/record/3676483#.YbAkv_HMLfF)
+Dataset source: Peeter, Stijn; Hagan, Sal; Das, Partha: “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, February 2020, presented at the 12th ACM Web Science Conference 2020 (https://zenodo.org/record/3676483#.YbAkv_HMLfF)
 
 I was able to obtain scraped subreddit post data from a research project at the University of Amsterdam, cited above, which was fortuitous because two of the subreddits in this corpus have since been banned (i.e. closed down) by Reddit. The_Donald and ChapoTrapHouse are both no longer active on Reddit, both banned in June 2020, roughly seven months after the subreddit content for the above project had been scraped by the researchers (between October 1st and November 1st of 2019). The two subreddits were closed due to their promoting violence and breaking Reddit content guidelines. The University of Amsterdam research project had used the subreddit post corpus as a test set for their "lexicon of 'extreme speech' (initially extracted from a corpus of 3_335_265 posts from 4chan's /pol/ sub-forum)...used to detect hate speech and extreme speech on online platforms".  
 
@@ -39,7 +37,7 @@ This corpus, which I repurposed for my classification project, was acquired in t
    
 - **r/The_Donald:** A forum where participants posted comments in support of Donald Trump. Initially created in 2015 after he announced his presidential campaign. Currently inactive, banned by Reddit in June 2020 for violating Reddit harassment policies. 790_000 members at its height. Comprises 878_217 of the posts in this dataset, 24% of the corpus. Used as an extremist category for the classification model.
    
-- **TheRedPill:** A forum promoting traditional gender roles, antifeminism, rape culture and "hegemonic masculinity"[Wikipedia: Controversial Reddit Commununities](https://en.wikipedia.org/wiki/Controversial_Reddit_communities). In quarantine since 2018. 149_432 members. Comprises 348_552 of the posts in this dataset, 9% of the corpus. Used as an extremist category for the classification model.
+- **TheRedPill:** A forum promoting traditional gender roles, antifeminism, rape culture and "hegemonic masculinity" (https://en.wikipedia.org/wiki/Controversial_Reddit_communities). In quarantine since 2018. 149_432 members. Comprises 348_552 of the posts in this dataset, 9% of the corpus. Used as an extremist category for the classification model.
    
 - **ChapoTrapHouse:** A forum of socialist memes and posts, described as left-leaning, anti-cop, pro-conspiracy theory. Currently inactive, banned by Reddit in June 2020 (at the same time it banned The_Donald, citing a crackdown on ‘pro-hate’ communities). 160_000 members at its height. Comprises 12_242 of the posts in this dataset, .03% of the corpus.
 
@@ -183,64 +181,64 @@ Subsequent steps to take in this project:
 
 1) “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, Peeter, Stijn; Hagan, Sal; Das, Partha, February 2020, presented at the 12th ACM Web Science Conference 2020
 
-[Link](https://zenodo.org/record/3676483#.YbAkv_HMLfF)
+    (https://zenodo.org/record/3676483#.YbAkv_HMLfF)
 
 
 2) Controversial Reddit communities-- Wikipedia
 
-[Link](https://en.wikipedia.org/wiki/Controversial_Reddit_communities)
+    (https://en.wikipedia.org/wiki/Controversial_Reddit_communities)
 
 
 3) "Twitch, Reddit crack down on Trump-linked content as industry faces reckoning", Politico, 6/29/2020
 
-[Link](https://www.politico.com/news/2020/06/29/reddit-bans-pro-trump-forum-in-crackdown-on-hate-speech-344698)
+    (https://www.politico.com/news/2020/06/29/reddit-bans-pro-trump-forum-in-crackdown-on-hate-speech-344698)
 
 4) "Reddit Banned A Ton Of Subreddits Including r/The_Donald And r/ChapoTrapHouse", BuzzFeed News, 6/29/2020
 
-[Link](https://www.buzzfeednews.com/article/juliareinstein/reddit-bans-subreddits-thedonald-chapotraphouse)
+    (https://www.buzzfeednews.com/article/juliareinstein/reddit-bans-subreddits-thedonald-chapotraphouse)
 
 
 5) "Male Supremacy", Southern Poverty Law Center
 
-[Link](https://www.splcenter.org/fighting-hate/extremist-files/ideology/male-supremacy)
+    (https://www.splcenter.org/fighting-hate/extremist-files/ideology/male-supremacy)
 
 
 6) "What is r/TheRedPill, the infamous men’s rights subreddit?", DailyDot, 5/21/2021
 
-[Link](https://www.dailydot.com/debug/reddit-red-pill/)
+    (https://www.dailydot.com/debug/reddit-red-pill/)
 
 
 7) "Spitting out the Red Pill: Former misogynists reveal how they were radicalised online", The New Statesman, 9/9/2021
 
-[Link](https://www.newstatesman.com/science-tech/2017/02/reddit-the-red-pill-interview-how-misogyny-spreads-online)
+    (https://www.newstatesman.com/science-tech/2017/02/reddit-the-red-pill-interview-how-misogyny-spreads-online)
 
 
 8) "Reddit ‘Quarantines’ White Nationalist Subreddits", Daily Beast, 9/29/2018
 
-[Link](https://www.thedailybeast.com/reddit-quarantines-white-nationalist-subreddits)
+    (https://www.thedailybeast.com/reddit-quarantines-white-nationalist-subreddits)
 
 
 9) “The rise of domestic extremism in America”, Washington Post, 4/12/2021
 
-[Link](https://www.washingtonpost.com/investigations/interactive/2021/domestic-terrorism-data/)
+    (https://www.washingtonpost.com/investigations/interactive/2021/domestic-terrorism-data/)
 
 
 10) “The rise of domestic terrorism is fueled mostly by far-right extresmists", The Philadelphia Inquirer, 4/12/2021
 
-[Link](https://www.inquirer.com/news/nation-world/domestic-terrorism-analysis-study-far-right-20210412.html)
+    (https://www.inquirer.com/news/nation-world/domestic-terrorism-analysis-study-far-right-20210412.html)
 
 
 11) “Were the Sikh Temple Killings Preventable?”, Mother Jones, 8/9/2012
 
-[Link](https://www.motherjones.com/politics/2012/08/sikh-temple-killings-preventable-homeland-security/)
+    (https://www.motherjones.com/politics/2012/08/sikh-temple-killings-preventable-homeland-security/)
 
 
 12) “Radicalization and Violent Extremism: Lessons Learned from Canada, the UK and the US”, National Institute of Justice Report, July 2015
 
-[Link](https://www.ojp.gov/pdffiles1/nij/249947.pdf)
+    (https://www.ojp.gov/pdffiles1/nij/249947.pdf)
 
 
 13) “What is radicalization?”, Center for Research on Extremism
 
-[Link](https://www.sv.uio.no/c-rex/english/groups/compendium/what-is-radicalization.html)
+    (https://www.sv.uio.no/c-rex/english/groups/compendium/what-is-radicalization.html)
 
