@@ -181,64 +181,64 @@ Subsequent steps to take in this project:
 
 1) “Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech”, Peeter, Stijn; Hagan, Sal; Das, Partha, February 2020, presented at the 12th ACM Web Science Conference 2020
 
-    (https://zenodo.org/record/3676483#.YbAkv_HMLfF)
+    https://zenodo.org/record/3676483#.YbAkv_HMLfF
 
 
 2) Controversial Reddit communities-- Wikipedia
 
-    (https://en.wikipedia.org/wiki/Controversial_Reddit_communities)
+    https://en.wikipedia.org/wiki/Controversial_Reddit_communities
 
 
 3) "Twitch, Reddit crack down on Trump-linked content as industry faces reckoning", Politico, 6/29/2020
 
-    (https://www.politico.com/news/2020/06/29/reddit-bans-pro-trump-forum-in-crackdown-on-hate-speech-344698)
+    https://www.politico.com/news/2020/06/29/reddit-bans-pro-trump-forum-in-crackdown-on-hate-speech-344698
 
 4) "Reddit Banned A Ton Of Subreddits Including r/The_Donald And r/ChapoTrapHouse", BuzzFeed News, 6/29/2020
 
-    (https://www.buzzfeednews.com/article/juliareinstein/reddit-bans-subreddits-thedonald-chapotraphouse)
+    https://www.buzzfeednews.com/article/juliareinstein/reddit-bans-subreddits-thedonald-chapotraphouse
 
 
 5) "Male Supremacy", Southern Poverty Law Center
 
-    (https://www.splcenter.org/fighting-hate/extremist-files/ideology/male-supremacy)
+    https://www.splcenter.org/fighting-hate/extremist-files/ideology/male-supremacy
 
 
 6) "What is r/TheRedPill, the infamous men’s rights subreddit?", DailyDot, 5/21/2021
 
-    (https://www.dailydot.com/debug/reddit-red-pill/)
+    https://www.dailydot.com/debug/reddit-red-pill/
 
 
 7) "Spitting out the Red Pill: Former misogynists reveal how they were radicalised online", The New Statesman, 9/9/2021
 
-    (https://www.newstatesman.com/science-tech/2017/02/reddit-the-red-pill-interview-how-misogyny-spreads-online)
+    https://www.newstatesman.com/science-tech/2017/02/reddit-the-red-pill-interview-how-misogyny-spreads-online
 
 
 8) "Reddit ‘Quarantines’ White Nationalist Subreddits", Daily Beast, 9/29/2018
 
-    (https://www.thedailybeast.com/reddit-quarantines-white-nationalist-subreddits)
+    https://www.thedailybeast.com/reddit-quarantines-white-nationalist-subreddits
 
 
 9) “The rise of domestic extremism in America”, Washington Post, 4/12/2021
 
-    (https://www.washingtonpost.com/investigations/interactive/2021/domestic-terrorism-data/)
+    https://www.washingtonpost.com/investigations/interactive/2021/domestic-terrorism-data/
 
 
 10) “The rise of domestic terrorism is fueled mostly by far-right extresmists", The Philadelphia Inquirer, 4/12/2021
 
-    (https://www.inquirer.com/news/nation-world/domestic-terrorism-analysis-study-far-right-20210412.html)
+    https://www.inquirer.com/news/nation-world/domestic-terrorism-analysis-study-far-right-20210412.html
 
 
 11) “Were the Sikh Temple Killings Preventable?”, Mother Jones, 8/9/2012
 
-    (https://www.motherjones.com/politics/2012/08/sikh-temple-killings-preventable-homeland-security/)
+    https://www.motherjones.com/politics/2012/08/sikh-temple-killings-preventable-homeland-security/
 
 
 12) “Radicalization and Violent Extremism: Lessons Learned from Canada, the UK and the US”, National Institute of Justice Report, July 2015
 
-    (https://www.ojp.gov/pdffiles1/nij/249947.pdf)
+    https://www.ojp.gov/pdffiles1/nij/249947.pdf
 
 
 13) “What is radicalization?”, Center for Research on Extremism
 
-    (https://www.sv.uio.no/c-rex/english/groups/compendium/what-is-radicalization.html)
+    https://www.sv.uio.no/c-rex/english/groups/compendium/what-is-radicalization.html
 
